@@ -24,8 +24,9 @@ User Information
 Choose Remainder
     Wait And Click  id=eu.smartpatient.mytherapy:id/addMedicationButton
 Input medication name
+    [Arguments]  ${medication name}
     Wait And Click  id=eu.smartpatient.mytherapy:id/searchView
-    Input Text  id=eu.smartpatient.mytherapy:id/searchView  ${medicationName}
+    Input Text  id=eu.smartpatient.mytherapy:id/searchView  ${medication name}
     Wait And Click  id=eu.smartpatient.mytherapy:id/unitIconView
 Input Pills
     Wait And Click  id=eu.smartpatient.mytherapy:id/summaryView
@@ -39,24 +40,25 @@ Add Alarm
 Verify That Remainder added
     Wait Until Page Contains Element  id=eu.smartpatient.mytherapy:id/alarmIcon
 Log Into Account With Invalid Data
-    [Arguments]  &{credentions}
+    [Arguments]  &{credentials}
     Wait And Click  accessibility_id=Settings
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginView
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
-    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${credentions}[UserName]
+    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${credentials}[UserName]
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
-    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/passwordEditText   ${credentions}[UserPassword]
+    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/passwordEditText   ${credentials}[UserPassword]
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify Error Message, When User Log Into Account With Invalid Data
-    [Arguments]  &{credentions}
-    Wait Until Page Contains  ${credentions}[ErrorMessage]
+    [Arguments]  &{credentials}
+    Wait Until Page Contains  ${credentials}[ErrorMessage]
     Wait And Click  id=android:id/button1
 Log Into Account And See A Correct Error Message
-    [Arguments]  &{credentions}
+    [Arguments]  &{credentials}
     Log Into Account With Invalid Data  &{credentions}
-    Verify Error Message, When User Log Into Account With Invalid Data  &{credentions}
+    Verify Error Message, When User Log Into Account With Invalid Data  &{credentials}
 Log In With A Correct Data
+    [Arguments]  ${email}  ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
     Press Keykode  ENTER
@@ -67,6 +69,7 @@ Log In With A Correct Data
     Hide Keyboard
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify That User With A Correct Data Log In
+    [Arguments]  ${email}
     Wait And Click  id=com.google.android.gms:id/credential_save_reject
     Set Appium Timeout  60
     Wait And Click  accessibility_id=Settings
@@ -99,6 +102,7 @@ Log Out
 Verify That User Log Out
     Wait Until Page Contains Element  id=eu.smartpatient.mytherapy:id/loginButton
 Click Forgot Password
+    [Arguments]  ${email}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
     Wait And Click   id=eu.smartpatient.mytherapy:id/resetPasswordButton
