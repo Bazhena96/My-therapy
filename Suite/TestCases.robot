@@ -6,8 +6,7 @@ Resource  Keywords.robot
 
 *** Test Cases ***
 User open and load application and skip settings
-    Open And Load
-    User Skip Settings
+    Load And Skip Settings
 Add user information
     Set Appium Timeout  180
     User Information
