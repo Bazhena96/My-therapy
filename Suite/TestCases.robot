@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    Android test application
 Library  AppiumLibrary
-Resource  Variables.robot
-Resource  Keywords.robot
+Resource  ../Resources/Variables.robot
+Resource  ../Resources/Keywords.robot
 
 *** Test Cases ***
 User open and load application and skip settings
@@ -36,9 +36,5 @@ User log out
     Verify That User Log Out
 User clicked "forgot password" and expect message for reset password
     Click Forgot Password  bazhenkak@gmail.com
-
-
-
-
 
 
