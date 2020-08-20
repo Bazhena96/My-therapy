@@ -13,7 +13,7 @@ Add user information
 User choose the remainder
     Choose Remainder
 User Choose tipe of the remainder and input medication name
-    Input medication name
+    Input medication name  azitromicin
     Input Pills
     Add Alarm
     Verify That Remainder added
@@ -26,7 +26,8 @@ User log into account and see a correct error message
     &{Incorrect password and incorrect username}
 User log in with a correct data
     [Tags]  Positive
-    Log In With A Correct Data
+    Log In With A Correct Data  bazhenkak@gmail.com  change13
+    Verify That User With A Correct Data Log In  bazhenkak@gmail.com
 User add personal information
     Add personal Data
     Verify That Users Data Added
@@ -34,8 +35,7 @@ User log out
     Log Out
     Verify That User Log Out
 User clicked "forgot password" and expect message for reset password
-    Click Forgot Password
-    Verify That User Log Out
+    Click Forgot Password  bazhenkak@gmail.com
 
 
 
