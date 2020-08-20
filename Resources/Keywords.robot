@@ -51,9 +51,8 @@ Log Into Account With Invalid Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify Error Message, When User Log Into Account With Invalid Data
     [Arguments]  &{credentials}
-    Sleep  10
     Wait Until Page Contains  ${credentials}[ErrorMessage]
-    Wait And Click  id=android:id/button1
+    Click Element  id=android:id/button1
 Log Into Account And See A Correct Error Message
     [Arguments]  &{credentials}
     Log Into Account With Invalid Data  &{credentials}
