@@ -47,26 +47,23 @@ Log Into Account With Invalid Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${credentials}[UserName]
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
-    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/passwordEditText   ${credentials}[UserPassword]
+    Input Text  id=eu.smartpatient.mytherapy:id/passwordEditText   ${credentials}[UserPassword]
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify Error Message, When User Log Into Account With Invalid Data
     [Arguments]  &{credentials}
+    Sleep  10
     Wait Until Page Contains  ${credentials}[ErrorMessage]
     Wait And Click  id=android:id/button1
 Log Into Account And See A Correct Error Message
     [Arguments]  &{credentials}
-    Log Into Account With Invalid Data  &{credentions}
+    Log Into Account With Invalid Data  &{credentials}
     Verify Error Message, When User Log Into Account With Invalid Data  &{credentials}
 Log In With A Correct Data
     [Arguments]  ${email}  ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
-    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
-    Press Keykode  ENTER
-    Press Keykode  ENTER
+    Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
-    AppiumLibrary.Input Password  id=eu.smartpatient.mytherapy:id/passwordEditText   ${password}
-    Press Keykode  ENTER
-    Hide Keyboard
+    Input Password  id=eu.smartpatient.mytherapy:id/passwordEditText   ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify That User With A Correct Data Log In
     [Arguments]  ${email}
@@ -110,15 +107,6 @@ Click Forgot Password
     Input Text  id=eu.smartpatient.mytherapy:id/emailEditText  ${email}
     Wait And Click  id=eu.smartpatient.mytherapy:id/resetButton
     Wait And Click  id=android:id/button1
-
-
-
-
-
-
-
-
-
 
 
 
