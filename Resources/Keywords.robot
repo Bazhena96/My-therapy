@@ -13,11 +13,11 @@ User Skip Settings
 Load And Skip Settings
     Open And Load
     User Skip Settings
-User Information
-    Wait And Click   id=eu.smartpatient.mytherapy:id/genderView
-    Wait And Click   id=android:id/numberpicker_input
+Add User Information
+    Wait And Click  id=eu.smartpatient.mytherapy:id/genderView
+    Wait And Click  id=android:id/numberpicker_input
     Wait And Click  id=android:id/button1
-    Wait And Click    id=eu.smartpatient.mytherapy:id/yearOfBirthView
+    Wait And Click  id=eu.smartpatient.mytherapy:id/yearOfBirthView
     Wait And Click  id=android:id/numberpicker_input
     Wait And Click  id=android:id/button1
     Wait And Click  id=eu.smartpatient.mytherapy:id/nextButton
@@ -28,7 +28,7 @@ Input medication name
     Wait And Click  id=eu.smartpatient.mytherapy:id/searchView
     Input Text  id=eu.smartpatient.mytherapy:id/searchView  ${medication name}
     Wait And Click  id=eu.smartpatient.mytherapy:id/unitIconView
-Input Pills
+Input medication form
     Wait And Click  id=eu.smartpatient.mytherapy:id/summaryView
     Wait And Click  id=android:id/button1
     Wait And Click  id=eu.smartpatient.mytherapy:id/nextButton
@@ -46,9 +46,9 @@ Click Settings And Log In
 Log Into Account With Invalid Data
     [Arguments]  &{credentials}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
-    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${credentials}[UserName]
+    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText  ${credentials}[UserName]
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
-    Input Text  id=eu.smartpatient.mytherapy:id/passwordEditText   ${credentials}[UserPassword]
+    Input Text  id=eu.smartpatient.mytherapy:id/passwordEditText  ${credentials}[UserPassword]
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify Error Message, When User Log Into Account With Invalid Data
     [Arguments]  &{credentials}
@@ -61,19 +61,18 @@ Log Into Account And See A Correct Error Message
 Log In With A Correct Data
     [Arguments]  ${email}  ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
-    Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
+    Input Text  id=eu.smartpatient.mytherapy:id/emailEditText  ${email}
     Click Email Completion
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
-    Input Password  id=eu.smartpatient.mytherapy:id/passwordEditText   ${password}
+    Input Password  id=eu.smartpatient.mytherapy:id/passwordEditText  ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify That User With A Correct Data Log In
     [Arguments]  ${email}
-#    Click Reject
     Set Appium Timeout  60
     Wait And Click  accessibility_id=Settings
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
     Wait Until Page Contains  ${email}
-Add personal Data
+Add Personal Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/genderView
     Wait And Click  id=android:id/numberpicker_input
     Wait And Click  id=android:id/button1
@@ -112,12 +111,7 @@ Email completion
 Click Email Completion
     ${button count}  Get Matching Xpath Count  /hierarchy/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView
     Run Keyword IF  ${button count}>0  Email Completion
-#Reject
-#    Wait And Click  id=com.google.android.gms:id/credential_save_reject
-#Click Reject
-#    ${button count}  Get Matching Xpath Count  id=com.google.android.gms:id/credential_save_reject
-#    Run Keyword IF  ${button count}>0  Reject
-#    ELSE  Set Appium Timeout  60
+
 
 
 
