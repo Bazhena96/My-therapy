@@ -111,8 +111,14 @@ Click Forgot Password
 Email completion
     Wait And Click  id=android:id/text1
 Click Email Completion
-    ${button count}  Get Element Count  id=android:id/text1
-    Run Keyword IF  ${button count}>0  Email Complition
+    ${button count}  Get Matching Xpath Count  /hierarchy/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView
+    Run Keyword IF  ${button count}>0  Email Completion
+Click Reject
+    ${button count}  Get Matching Xpath Count  id=com.google.android.gms:id/credential_save_reject
+    Run Keyword IF  ${button count}>0  Reject  ELSE
+Reject
+    Wait And Click  id=com.google.android.gms:id/credential_save_reject
+
 
 
 
