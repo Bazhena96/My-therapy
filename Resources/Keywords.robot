@@ -68,10 +68,11 @@ Log In With A Correct Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify That User With A Correct Data Log In
     [Arguments]  ${email}
-    Click Reject
+#    Click Reject
+    Set Appium Timeout  60
     Wait And Click  accessibility_id=Settings
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
-    Wait Until Page Contains Text  ${email}
+    Wait Until Page Contains  ${email}
 Add personal Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/genderView
     Wait And Click  id=android:id/numberpicker_input
@@ -86,10 +87,10 @@ Add personal Data
 Verify That Users Data Added
     Wait And Click  accessibility_id=Back
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
-    Wait Until Page Contains Text  female
-    Wait Until Page Contains Text  1975
-    Wait Until Page Contains Text  70 cm
-    Wait Until Page Contains Text  185 kg
+    Wait Until Page Contains  female
+    Wait Until Page Contains  1975
+    Wait Until Page Contains  70 cm
+    Wait Until Page Contains  185 kg
 Log Out
     Wait And Click  accessibility_id=Back
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
@@ -101,24 +102,27 @@ Verify That User Log Out
 Click Forgot Password
     [Arguments]  ${email}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
-    AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
+    Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
+    Click Email Completion
     Wait And Click   id=eu.smartpatient.mytherapy:id/resetPasswordButton
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     Input Text  id=eu.smartpatient.mytherapy:id/emailEditText  ${email}
+    Click Email Completion
     Wait And Click  id=eu.smartpatient.mytherapy:id/resetButton
     Wait And Click  id=android:id/button1
+Page To Change Password
+    Wait Until Page Contains Element  id=eu.smartpatient.mytherapy:id/passwordEditText
 Email completion
     Wait And Click  id=android:id/text1
 Click Email Completion
     ${button count}  Get Matching Xpath Count  /hierarchy/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView
     Run Keyword IF  ${button count}>0  Email Completion
-Reject
-    Wait And Click  id=com.google.android.gms:id/credential_save_reject
-
-Click Reject
-    ${button count}  Get Matching Xpath Count  id=com.google.android.gms:id/credential_save_reject
-    Run Keyword IF  ${button count}>0  Reject
-    ELSE  Set Appium Timeout  60
+#Reject
+#    Wait And Click  id=com.google.android.gms:id/credential_save_reject
+#Click Reject
+#    ${button count}  Get Matching Xpath Count  id=com.google.android.gms:id/credential_save_reject
+#    Run Keyword IF  ${button count}>0  Reject
+#    ELSE  Set Appium Timeout  60
 
 
 
