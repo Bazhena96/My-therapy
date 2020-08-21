@@ -68,8 +68,7 @@ Log In With A Correct Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify That User With A Correct Data Log In
     [Arguments]  ${email}
-    Wait And Click  id=com.google.android.gms:id/credential_save_reject
-    Set Appium Timeout  60
+    Click Reject
     Wait And Click  accessibility_id=Settings
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
     Wait Until Page Contains Text  ${email}
@@ -113,11 +112,13 @@ Email completion
 Click Email Completion
     ${button count}  Get Matching Xpath Count  /hierarchy/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView
     Run Keyword IF  ${button count}>0  Email Completion
-Click Reject
-    ${button count}  Get Matching Xpath Count  id=com.google.android.gms:id/credential_save_reject
-    Run Keyword IF  ${button count}>0  Reject  ELSE
 Reject
     Wait And Click  id=com.google.android.gms:id/credential_save_reject
+
+Click Reject
+    ${button count}  Get Matching Xpath Count  id=com.google.android.gms:id/credential_save_reject
+    Run Keyword IF  ${button count}>0  Reject
+    ELSE  Set Appium Timeout  60
 
 
 
