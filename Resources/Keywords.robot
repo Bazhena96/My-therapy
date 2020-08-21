@@ -62,6 +62,7 @@ Log In With A Correct Data
     [Arguments]  ${email}  ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
+    Click Autocomplition
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
     Input Password  id=eu.smartpatient.mytherapy:id/passwordEditText   ${password}
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
@@ -107,6 +108,12 @@ Click Forgot Password
     Input Text  id=eu.smartpatient.mytherapy:id/emailEditText  ${email}
     Wait And Click  id=eu.smartpatient.mytherapy:id/resetButton
     Wait And Click  id=android:id/button1
+Email Complition
+    Wait And Click  id=android:id/text1
+Click Autocomplition
+    ${button count}  Get Element Count  id=android:id/text1
+    Run Keyword IF  ${button count}>0  Email Complition
+
 
 
 
