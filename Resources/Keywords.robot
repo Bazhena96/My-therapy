@@ -39,11 +39,12 @@ Add Alarm
     Wait And Click  id=eu.smartpatient.mytherapy:id/saveButton
 Verify That Remainder added
     Wait Until Page Contains Element  id=eu.smartpatient.mytherapy:id/alarmIcon
-Log Into Account With Invalid Data
-    [Arguments]  &{credentials}
+Click Settings And Log In
     Wait And Click  accessibility_id=Settings
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginView
+Log Into Account With Invalid Data
+    [Arguments]  &{credentials}
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     AppiumLibrary.Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${credentials}[UserName]
     Wait And Click  id=eu.smartpatient.mytherapy:id/passwordEditText
@@ -51,7 +52,7 @@ Log Into Account With Invalid Data
     Wait And Click  id=eu.smartpatient.mytherapy:id/loginButton
 Verify Error Message, When User Log Into Account With Invalid Data
     [Arguments]  &{credentials}
-    Wait Until Page Contains  ${credentials}[ErrorMessage]
+    Wait Until Page Contains Element  ${credentials}[ErrorMessage]
     Click Element  id=android:id/button1
 Log Into Account And See A Correct Error Message
     [Arguments]  &{credentials}
