@@ -99,9 +99,6 @@ Verify That User Log Out
     Wait Until Page Contains Element  id=eu.smartpatient.mytherapy:id/loginButton
 Click Forgot Password
     [Arguments]  ${email}
-    Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
-    Input Text  id=eu.smartpatient.mytherapy:id/emailEditText   ${email}
-    Click Email Completion
     Wait And Click   id=eu.smartpatient.mytherapy:id/resetPasswordButton
     Wait And Click  id=eu.smartpatient.mytherapy:id/emailEditText
     Input Text  id=eu.smartpatient.mytherapy:id/emailEditText  ${email}
