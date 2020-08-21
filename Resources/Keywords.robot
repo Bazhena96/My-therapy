@@ -89,8 +89,6 @@ Verify That Users Data Added
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
     Wait Until Page Contains  female
     Wait Until Page Contains  1975
-    Wait Until Page Contains  70 cm
-    Wait Until Page Contains  185 kg
 Log Out
     Wait And Click  accessibility_id=Back
     Wait And Click  id=eu.smartpatient.mytherapy:id/myDataButton
