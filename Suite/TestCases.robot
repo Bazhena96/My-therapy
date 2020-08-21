@@ -37,5 +37,6 @@ User log out
     Verify That User Log Out
 User clicked "forgot password" and expect message for reset password
     Click Forgot Password  bazhenkak@gmail.com
+    Page To Change Password
 
 
