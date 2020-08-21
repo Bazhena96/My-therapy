@@ -16,11 +16,15 @@ User Choose tipe of the remainder and input medication name
     Input Pills
     Add Alarm
     Verify That Remainder added
+User Click Settings And Log In
+        Click Settings And Log In
 User log into account and see a correct error message
     [Tags]   Negativ
-    Click Settings And Log In
     [Template]  Log Into Account And See A Correct Error Message
-    &{Correct username but incorrect password}  &{Correct username but incorrect password}  &{Incorrect username but correct password}  &{Incorrect password and incorrect username}
+    &{Correct username but incorrect password}
+    &{Correct username but incorrect password}
+    &{Incorrect username but correct password}
+    &{Incorrect password and incorrect username}
 User log in with a correct data
     [Tags]  Positive
     Log In With A Correct Data  bazhenkak@gmail.com  change13
