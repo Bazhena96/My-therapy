@@ -7,17 +7,17 @@ Resource  ../Resources/Keywords.robot
 User open and load application and skip settings
     Load And Skip Settings
 Add user information
-    Set Appium Timeout  180
-    User Information
+    Set Appium Timeout  20
+    Add User Information
 User choose the remainder
     Choose Remainder
 User Choose tipe of the remainder and input medication name
     Input medication name  azitromicin
-    Input Pills
+    Input medication form
     Add Alarm
     Verify That Remainder added
 User Click Settings And Log In
-        Click Settings And Log In
+    Click Settings And Log In
 User log into account and see a correct error message
     [Tags]   Negativ
     [Template]  Log Into Account And See A Correct Error Message
