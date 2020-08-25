@@ -21,10 +21,9 @@ User Click Settings And Log In
 User log into account and see a correct error message
     [Tags]   Negativ
     [Template]  Log Into Account And See A Correct Error Message
-    &{Correct username but incorrect password}
-    &{Correct username but incorrect password}
-    &{Incorrect username but correct password}
-    &{Incorrect password and incorrect username}
+    &{CORRECT USERNAME BUT INCORRECT PASSWORD}
+    &{INCORRECT USERNAME BUT CORRECT PASSWORD}
+    &{INCORRECT PASSWORD AND USERNAME}
 User log in with a correct data
     [Tags]  Positive
     Log In With A Correct Data  bazhenkak@gmail.com  change13
